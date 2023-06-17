@@ -24,10 +24,10 @@ public class Botiga {
             return null;
         }
         
-        String nomNormalitzat = normalitzaNom(vi.getNombre());
+        String nomNormalitzat = normalitzaNom(vi.getNom());
         
         if (trobaVi(nomNormalitzat) != null) {
-            return null; // Ya existe un vino con el mismo nombre
+            return null; // Ya existe un vino con el mismo Nom
         }
         
         if (numVins >= maxVins) {
@@ -44,19 +44,19 @@ public class Botiga {
         String nomNormalitzat = normalitzaNom(nom);
         
         for (int i = 0; i < numVins; i++) {
-            if (vins[i].getNombre().equals(nomNormalitzat)) {
+            if (vins[i].getNom().equals(nomNormalitzat)) {
                 return vins[i];
             }
         }
         
-        return null; // No se encontró el vino con el nombre especificado
+        return null; // No se encontró el vino con el Nom especificado
     }
     
     public Vi elimina(String nom) {
         String nomNormalitzat = normalitzaNom(nom);
         
         for (int i = 0; i < numVins; i++) {
-            if (vins[i].getNombre().equals(nomNormalitzat)) {
+            if (vins[i].getNom().equals(nomNormalitzat)) {
                 if (vins[i].getStock() > 0) {
                     return null; // El vino aún tiene stock, no se puede eliminar
                 }
@@ -70,7 +70,7 @@ public class Botiga {
             }
         }
         
-        return null; // No se encontró el vino con el nombre especificado
+        return null; // No se encontró el vino con el Nom especificado
     }
     
     private void compactarArrayVins() {
@@ -89,10 +89,10 @@ public class Botiga {
     }
     
     private String normalitzaNom(String nom) {
-        // Eliminar espacios al principio y al final del nombre
+        // Eliminar espacios al principio y al final del Nom
         nom = nom.trim();
         
-        // Eliminar espacios extra dentro del nombre
+        // Eliminar espacios extra dentro del Nom
         nom = nom.replaceAll("\\s+", " ");
         
         return nom;
@@ -100,7 +100,7 @@ public class Botiga {
     
     private Vi trobaVi(String nom) {
         for (int i = 0; i < numVins; i++) {
-            if (vins[i].getNombre().equals(nom)) {
+            if (vins[i].getNom().equals(nom)) {
                 return vins[i];
             }
         }
