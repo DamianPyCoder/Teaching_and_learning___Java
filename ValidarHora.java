@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+//practicar excepciones
+
 public class ValidarHora {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
