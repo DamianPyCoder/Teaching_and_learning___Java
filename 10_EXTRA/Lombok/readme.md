@@ -1,3 +1,5 @@
+#### Teniendo los archivos en la misma carpeta, sino deberemos poner la ruta del archivo lombok, debemos ejecutar las siguientes lineas en la terminal:
+
 Para compilar:  
 
 ```
